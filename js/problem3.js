@@ -26,36 +26,34 @@ var factorNum = function(num){
 }
 
 
-$(document).ready(function() {			
-	var large = 0;
-	var factorArray = [600851475143];
-	var primeArray = [];
-	var tempArray = [];
-
 	
-	while(factorArray.length > 0 ){
-		var factorArrayLength = factorArray.length;
-		var nextCheckArray = [];
-		var tempArray;
-		for(var i=0; i < factorArrayLength ; i++){			
-			var number = factorArray[i];			
-			if(primeCheck(number)){				
-				primeArray.push(number);
-			}
-			else{						
-				tempArray = factorNum(factorArray[i]);
-				for(var j =0;j < tempArray.length ; j++){
-					var target = tempArray[j];
-					if(nextCheckArray.indexOf(target) < 0){
-						nextCheckArray.push(target);
-					}
+var large = 0;
+var factorArray = [600851475143];
+var primeArray = [];
+var tempArray = [];
+
+
+while(factorArray.length > 0 ){
+	var factorArrayLength = factorArray.length;
+	var nextCheckArray = [];
+	var tempArray;
+	for(var i=0; i < factorArrayLength ; i++){			
+		var number = factorArray[i];			
+		if(primeCheck(number)){				
+			primeArray.push(number);
+		}
+		else{						
+			tempArray = factorNum(factorArray[i]);
+			for(var j =0;j < tempArray.length ; j++){
+				var target = tempArray[j];
+				if(nextCheckArray.indexOf(target) < 0){
+					nextCheckArray.push(target);
 				}
 			}
-		}			
-		factorArray = nextCheckArray;
-	}
-	primeArray.sort(function(a ,b){return a-b;});
+		}
+	}			
+	factorArray = nextCheckArray;
+}
+primeArray.sort(function(a ,b){return a-b;});
 
-	console.log(primeArray);
-
-});
+console.log(primeArray);

@@ -1,7 +1,4 @@
 
-$(document).ready(function() {
-	gridTraverse.init();
-});
 
 var gridTraverse = (function(o){
 
@@ -80,3 +77,5 @@ var gridTraverse = (function(o){
 	return o;
 
 })( gridTraverse || {} );
+
+gridTraverse.init();

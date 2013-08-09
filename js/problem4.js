@@ -25,23 +25,19 @@ var isPalindromic = function(num){
 }
 
 
-$(document).ready(function() {
 
-	//We only check the 6-digit number
-	var min = 317;
-	var max = 999;
-	var large = 100000;
-	
-	for(var i = max ; i > min ; i--){
-		for(var j = i ; j > min ; j--){
-			var num = i*j;
-			if(isPalindromic(num)){
-				if(num > large)				
-					large = num;
-			}				
-		}
+//We only check the 6-digit number
+var min = 317;
+var max = 999;
+var large = 100000;
+
+for(var i = max ; i > min ; i--){
+	for(var j = i ; j > min ; j--){
+		var num = i*j;
+		if(isPalindromic(num)){
+			if(num > large)				
+				large = num;
+		}				
 	}
-
-	console.log(large);
-
-});
+}
+console.log(large);

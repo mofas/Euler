@@ -21,31 +21,29 @@ var drawTheSameFactor = function(array , targetNum , sameFactorArray){
 }
 
 
-$(document).ready(function() {
 
-	var sum = 1;
-	var multiples = [];
-	var sameFactorArray = [];
+var sum = 1;
+var multiples = [];
+var sameFactorArray = [];
 
-	for(var i = 1; i < 21 ; i++){
-		multiples.push(i);
-	}
-	
-	//draw the same factor 
-	var targetFactorNum = 2;
-	while(targetFactorNum < 21){
-		if(!drawTheSameFactor(multiples , targetFactorNum , sameFactorArray)){
-			targetFactorNum++;
-		}
-	}
-	
-	for(var i= 0; i < 20 ; i++){
-		sum *= multiples[i];
-	}
+for(var i = 1; i < 21 ; i++){
+	multiples.push(i);
+}
 
-	for(var i = 0; i < sameFactorArray.length ; i++){
-		sum *= sameFactorArray[i];	
+//draw the same factor 
+var targetFactorNum = 2;
+while(targetFactorNum < 21){
+	if(!drawTheSameFactor(multiples , targetFactorNum , sameFactorArray)){
+		targetFactorNum++;
 	}
+}
 
-	console.log(sum);
-});
+for(var i= 0; i < 20 ; i++){
+	sum *= multiples[i];
+}
+
+for(var i = 0; i < sameFactorArray.length ; i++){
+	sum *= sameFactorArray[i];	
+}
+
+console.log(sum);
